@@ -32,6 +32,7 @@ set clipboard=unnamed
 
 syntax enable
 set background=light
+"set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 
@@ -52,6 +53,10 @@ call neobundle#begin(expand('/Users/AA502096/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
@@ -99,4 +104,7 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
+
+au BufRead,BufNewFile *.md set filetype=markdown
+nmap <F5> :PrevimOpen<CR>
 
